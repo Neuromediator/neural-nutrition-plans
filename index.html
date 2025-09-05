@@ -3,18 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neural-nutrition-plans</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Super Coach Pro - AI-Powered Fitness & Nutrition App | Get Early Access</title>
+    <meta name="description" content="Personalized AI workout plans and meal plans in one app. Join thousands getting fit with Super Coach Pro - your intelligent fitness coach." />
+    <meta name="author" content="Super Coach Pro" />
 
-    <meta property="og:title" content="neural-nutrition-plans" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="Super Coach Pro - Your AI Coach for Workouts & Meals" />
+    <meta property="og:description" content="Personalized training and nutrition plans in one app—crafted by AI, adapted to you." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="/hero-preview.jpg" />
+    <meta property="og:url" content="https://supercoachpro.com" />
 
+    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:title" content="Super Coach Pro - Your AI Coach for Workouts & Meals" />
+    <meta name="twitter:description" content="Personalized training and nutrition plans in one app—crafted by AI, adapted to you." />
+    <meta name="twitter:image" content="/hero-preview.jpg" />
+
+    <!-- Analytics Placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+    </script>
+
+    <!-- Mock API for development/static hosting -->
+    <script>
+      window.mockSubscribeAPI = async (email) => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        if (!email || !email.includes('@')) {
+          throw new Error('Invalid email');
+        }
+        
+        console.log('Mock subscription:', email);
+        return { success: true };
+      };
+    </script>
   </head>
 
   <body>

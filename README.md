@@ -1,73 +1,143 @@
-# Welcome to your Lovable project
+# Super Coach Pro Landing Page
 
-## Project info
+A high-converting, responsive landing page for Super Coach Pro - an AI-powered fitness app that helps users plan workouts and meals with personalized recommendations.
 
-**URL**: https://lovable.dev/projects/4969e1ce-6df6-4151-97a5-9528b5ef3e49
+## 🚀 Features
 
-## How can I edit this code?
+- **Modern Design**: Futuristic dark theme with neon accents and glassmorphism effects
+- **Fully Responsive**: Optimized for mobile, tablet, and desktop (360px+)
+- **High Performance**: Fast loading with optimized images and animations
+- **SEO Optimized**: Proper meta tags, structured data, and semantic HTML
+- **Accessible**: WCAG 2.1 AA compliant with proper focus management
+- **Email Capture**: Working subscription form with validation and feedback
 
-There are several ways of editing your application.
+## 🎨 Design System
 
-**Use Lovable**
+- **Colors**: Dark background (#0B1220) with cyan (#00E5FF) and violet (#8A2BE2) accents
+- **Typography**: Inter font family for modern, clean readability
+- **Effects**: Glassmorphism cards, subtle glows, and smooth animations
+- **Components**: Custom variants using shadcn/ui with design system tokens
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4969e1ce-6df6-4151-97a5-9528b5ef3e49) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: shadcn/ui with custom variants
+- **Icons**: Lucide React
+- **Forms**: React Hook Form with validation
+- **Animations**: CSS animations and transitions
 
-**Use your preferred IDE**
+## 📦 Installation & Setup
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd super-coach-pro-landing
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Follow these steps:
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🌐 Deployment
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Vercel (Recommended)
+```bash
+npm run build
+# Deploy dist folder to Vercel
 ```
 
-**Edit a file directly in GitHub**
+### Netlify
+```bash
+npm run build  
+# Deploy dist folder to Netlify
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Static Hosting
+The built files in `dist/` can be deployed to any static hosting service.
 
-**Use GitHub Codespaces**
+## 📧 Email Integration
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The landing page includes a working email subscription form. The current implementation uses a mock API endpoint (`/api/subscribe`).
 
-## What technologies are used for this project?
+### Production Integration
 
-This project is built with:
+To connect to a real backend:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. **Replace the API endpoint** in `src/components/hero-section.tsx`
+2. **Add environment variables** for your email service
+3. **Update the mock handler** in `public/api/subscribe/`
 
-## How can I deploy this project?
+Popular email services to integrate:
+- Mailchimp API
+- ConvertKit API  
+- SendGrid API
+- Supabase (for database storage)
 
-Simply open [Lovable](https://lovable.dev/projects/4969e1ce-6df6-4151-97a5-9528b5ef3e49) and click on Share -> Publish.
+## 🔧 Environment Variables
 
-## Can I connect a custom domain to my Lovable project?
+Create a `.env.local` file:
 
-Yes, you can!
+```env
+VITE_GOOGLE_ANALYTICS_ID=G-XXXXXXX
+VITE_API_BASE_URL=https://your-api.com
+VITE_MAILCHIMP_API_KEY=your-key
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📱 Responsive Breakpoints
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Mobile**: 360px - 767px
+- **Tablet**: 768px - 1023px  
+- **Desktop**: 1024px+
+
+## ♿ Accessibility
+
+- Semantic HTML structure
+- Proper heading hierarchy (h1 → h2 → h3)
+- Alt text for all images
+- Focus management and keyboard navigation
+- Color contrast ratio ≥ 4.5:1
+- Screen reader friendly
+
+## 📊 Analytics
+
+The landing page includes Google Analytics 4 integration. Update the tracking ID in `index.html` and your environment variables.
+
+## 🎯 Performance Optimizations
+
+- Lazy loading for images
+- Optimized font loading
+- Minimal JavaScript bundle
+- CSS animations over JavaScript
+- Compressed assets
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📞 Support
+
+For support, email hello@supercoachpro.com or join our Discord community.
+
+---
+
+Built with ❤️ by the Super Coach Pro team
