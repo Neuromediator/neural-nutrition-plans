@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
 import { ArrowRight, CheckCircle, Mail } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import heroImage from "@/assets/hero-image.jpg";
 
 const TrustBadge = ({ name }: { name: string }) => (
@@ -29,34 +30,29 @@ export function HeroSection() {
     setIsLoading(true);
     
     try {
-      // Try the API endpoint first, fall back to mock if needed
-      let response;
-      try {
-        response = await fetch("/api/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email }),
-        });
-      } catch (fetchError) {
-        // Fallback to mock API for development/static hosting
-        if (window.mockSubscribeAPI) {
-          await window.mockSubscribeAPI(email);
-          response = { ok: true };
+      const { error } = await supabase
+        .from('emails')
+        .insert([{ email }]);
+
+      if (error) {
+        if (error.code === '23505') { // Unique constraint violation
+          toast({
+            title: "Already subscribed! 📧",
+            description: "This email is already on our early access list.",
+            variant: "destructive",
+          });
         } else {
-          throw fetchError;
+          throw error;
         }
-      }
-      
-      if (response.ok) {
+      } else {
         toast({
           title: "Success! 🎉",
           description: "You're on the early access list. We'll be in touch soon!",
         });
         setEmail("");
-      } else {
-        throw new Error("Failed to subscribe");
       }
     } catch (error) {
+      console.error('Subscription error:', error);
       toast({
         title: "Something went wrong",
         description: "Please try again later.",
